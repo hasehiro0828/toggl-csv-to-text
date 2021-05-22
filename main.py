@@ -1,6 +1,7 @@
 import csv
 import sys
 from typing import Dict, List, TypedDict, cast
+import pyperclip
 
 TypeAliasProject = str
 
@@ -31,6 +32,7 @@ with open(filename, encoding='utf-8-sig') as f:
         )
         records.setdefault(csv_row['Project'], []).append(time_and_duration)
 
+text_array: List[str] = []
 for project, time_and_duration_array in records.items():
     total_hours, total_minutes, total_seconds = 0, 0, 0
 
@@ -53,4 +55,10 @@ for project, time_and_duration_array in records.items():
 
     project_text = f'- [{str(total_hours).zfill(2)}:{str(total_minutes).zfill(2)}:{str(total_seconds).zfill(2)}] {project}'
     text = project_text + title_text
-    print(text)
+    text_array.append(text)
+
+result_text = '\n'.join(text_array)
+
+pyperclip.copy(result_text)
+
+print('Successful copy to clipboard!')
