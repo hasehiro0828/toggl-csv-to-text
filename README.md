@@ -1,4 +1,4 @@
-# toggl-csv-to-text
+# toggl-csv-to-text-python
 
 [toggl track](https://toggl.com/track/) の csv をいい感じにフォーマットするスクリプト
 
