@@ -2,5 +2,8 @@
     "python.pythonPath": ".venv/bin/python",
     "cSpell.words": [
         "pyperclip"
-    ]
+    ],
+    "python.formatting.provider": "yapf",
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true
 }
